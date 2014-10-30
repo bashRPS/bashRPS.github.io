@@ -1,0 +1,21 @@
+body {
+    background: #222222;
+}
+
+p {
+    color: white;
+    font-family: monospace;
+}
+
+input {
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: monospace;
+    width: 100%;
+    vertical-align: top;
+}
+
+div {
+    display: inline;
+}
