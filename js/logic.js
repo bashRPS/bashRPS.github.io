@@ -1,4 +1,8 @@
-var userChoice = prompt("Do you choose rock, paper or scissors?");
+window.onload = function() {
+    // We have a div called 
+    var output = document.getElementById("output");
+
+    var userChoice = prompt("Do you choose rock, paper or scissors?");
 var computerChoice = Math.random();
 if (computerChoice < 0.34) {
 	computerChoice = "rock";
@@ -7,45 +11,47 @@ if (computerChoice < 0.34) {
 } else {
 	computerChoice = "scissors";
 }
+output.innerHTML = "Computer: " + computerChoice;
 
-
-
-console.log("Computer: " + computerChoice);
 var compare = function(choice1,choice2) {
 if (choice1 === choice2) {
-    return "The result is a tie!"
+    output.innerHTML = "The result is a tie!";
     var userChoice = prompt("Do you choose rock, paper or scissors?");
-var computerChoice = Math.random();}
+var computerChoice = Math.random();
+compare(userChoice,computerChoice);
+}
 else if (choice1 === "rock") {
 
 if (choice2 === "scissors") {
-    return "rock wins" }
+    output.innerHTML = "rock wins"; }
     else {
-        return "paper wins"}
+        output.innerHTML = "paper wins";}
 
 } // fine funzione choice === rock
     
 else if (choice1 === "paper") {
 
 if (choice2 === "rock") {
-    return "paper wins" }
+    output.innerHTML = "paper wins"; }
     else {
-        return "scissors wins"}
+        output.innerHTML = "scissors wins";}
 
 } //fine funzione choice === paper
     
 else if (choice1 === "scissors") {
 
 if (choice2 === "rock") {
-    return "rock wins" }
+    output.innerHTML = "rock wins";}
     else {
-        return "scissors wins"}
+        output.innerHTML =  "scissors wins";}
 
 } // fine funzione choice === scissors
     
 else {
-    console.log("Please write rock,scissors or paper"); }
+    output.innerHTML = "Please write rock,scissors or paper"; }
 
 // non toccare, fine funzione!
 }
 compare(userChoice,computerChoice);
+}
+
