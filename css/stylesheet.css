@@ -18,4 +18,6 @@ input {
 
 div {
     display: inline;
+    color: white;
+    font-family: monospace;
 }
