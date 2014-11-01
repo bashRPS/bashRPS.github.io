@@ -1,20 +1,20 @@
 window.onload = function() {
-    // We have a div called 
+    // We have a div called
     var output = document.getElementById("output");
-    
-    
+
+
     //funzioni di vincita o perdita
     var win = function() {
-        score = score +1; 
+        score = score +1;
         output.innerHTML = "Your score is now " + score;
         again();
-    };    
-    
+    };
+
     var lose = function() {
             score = 0;
         again();
     };
-        
+
 var score = 0;
 
 var again = function() {
@@ -39,8 +39,8 @@ var again = function() {
     again();
 }
     }
-    
-    
+
+
 
 var compare = function(choice1,choice2) {
 if (choice1 === choice2) {
@@ -52,48 +52,48 @@ if (choice1 === choice2) {
 else if (choice1 === "rock") {
 
 if (choice2 === "scissors") {
-    output.innerHTML = "The computer was scissors, so you won";
+    output.innerHTML = "The computer was scissors, so you won!";
 win();
 }
     else {
-        output.innerHTML = "the computer was paper so you lose";
+        output.innerHTML = "The computer was paper so you lose.";
     lose();
     }
 
 } // fine funzione choice === rock
-    
+
 else if (choice1 === "paper") {
 
 if (choice2 === "rock") {
-    output.innerHTML = "the computer was rock, so you won";
+    output.innerHTML = "The computer was rock, so you won!";
 win();
 }
-    
+
     else {
-        output.innerHTML = "the computer was scissors, so you lose";
+        output.innerHTML = "The computer was scissors, so you lose.";
     lose();
     }
 
 } //fine funzione choice === paper
-    
+
 else if (choice1 === "scissors") {
 
 if (choice2 === "rock") {
-    output.innerHTML = "the computer was rock, so you lose";
+    output.innerHTML = "The computer was rock, so you lose".;
 lose();
 }
     else {
-        output.innerHTML =  "the computer was paper, so you won";
+        output.innerHTML =  "The computer was paper, so you won!";
     win();
     }
 
 } else if (choice1 === "score?") {
     output.innerHTML= "Your score now is " + score; }
-    
+
     // fine funzione choice === scissors
-    
+
 else {
-    output.innerHTML = "Please write rock,scissors or paper"; }
+    output.innerHTML = "Please write rock,scissors or paper."; }
 again()
 // non toccare, fine funzione!
 }
@@ -113,7 +113,6 @@ var userChoice = prompt("Do you choose rock, paper or scissors?");
 	computerChoice = "scissors";
 }
     compare(userChoice, computerChoice);
-    
+
 
 }
-
