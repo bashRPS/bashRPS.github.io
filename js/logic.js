@@ -11,7 +11,7 @@ window.onload = function() {
         output.innerHTML = "Your score is now " + score;
         if (game === 3) {
         roundEnded();
-        game = 0; } else { 
+        } else { 
         again();
         }
     }
@@ -21,7 +21,7 @@ window.onload = function() {
         game = game+1;
         if (game === 3) {
         roundEnded();
-        game = 0; } else { 
+        } else { 
         again();
         }
     }
@@ -29,6 +29,7 @@ window.onload = function() {
 var score = 0;
 
 var roundEnded = function() {
+    game = 0;
     var go = prompt ("Do you want to play again?");
     if (go === "yes") {
         var userChoice = prompt("Do you choose rock, paper or scissors?");
@@ -110,7 +111,8 @@ lose();
     }
 
 } else if (choice1 === "score?") {
-    output.innerHTML= "Your score now is " + score; }
+    output.innerHTML= "Your score now is " + score; } else if (choice1 === "game?") {
+    output.innerHTML= "Your game now is " + game; }
 
     // fine funzione choice === scissors
 
@@ -126,7 +128,6 @@ again()
 
 // starta il gioco per la prima volta
 var userChoice = prompt("Do you choose rock, paper or scissors?");
-    game = game+1;
     var computerChoice = Math.random();
     if (computerChoice < 0.34) {
 	computerChoice = "rock";
