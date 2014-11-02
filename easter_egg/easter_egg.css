@@ -6,9 +6,7 @@ body{
     background-color: #1a1a1a;
 }
 canvas {
-  left: 0;
   position: absolute;
-  bottom: 20%;
 }
 .description{
   color: rgba(255,255,255,.3);
