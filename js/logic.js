@@ -1,23 +1,34 @@
 window.onload = function() {
+    var game = 0
     // We have a div called
     var output = document.getElementById("output");
 
 
     //funzioni di vincita o perdita
     var win = function() {
+        game = game +1;
         score = score +1;
         output.innerHTML = "Your score is now " + score;
+        if (game === 3) {
+        roundEnded();
+        game = 0; } else { 
         again();
-    };
+        }
+    }
 
     var lose = function() {
-            score = 0;
+        score = 0;
+        game = game+1;
+        if (game === 3) {
+        roundEnded();
+        game = 0; } else { 
         again();
-    };
+        }
+    }
 
 var score = 0;
 
-var again = function() {
+var roundEnded = function() {
     var go = prompt ("Do you want to play again?");
     if (go === "yes") {
         var userChoice = prompt("Do you choose rock, paper or scissors?");
@@ -36,8 +47,21 @@ var again = function() {
     saveScore();
 } else {
             output.innerHTML = "Please enter yes or no.";
-    again();
+    roundEnded();
 }
+    }
+var again = function() {
+    var userChoice = prompt("Do you choose rock, paper or scissors?");
+    var computerChoice = Math.random();
+    if (computerChoice < 0.34) {
+	computerChoice = "rock";
+} else if(computerChoice <= 0.67) {
+	computerChoice = "paper";
+} else {
+	computerChoice = "scissors";
+}
+    compare(userChoice, computerChoice);
+
     }
 
 
@@ -45,8 +69,6 @@ var again = function() {
 var compare = function(choice1,choice2) {
 if (choice1 === choice2) {
     output.innerHTML = "The result is a tie!";
-    var userChoice = prompt("Do you choose rock, paper or scissors?");
-    var computerChoice = Math.random();
     again();
 }
 else if (choice1 === "rock") {
@@ -104,6 +126,7 @@ again()
 
 // starta il gioco per la prima volta
 var userChoice = prompt("Do you choose rock, paper or scissors?");
+    game = game+1;
     var computerChoice = Math.random();
     if (computerChoice < 0.34) {
 	computerChoice = "rock";
@@ -113,6 +136,5 @@ var userChoice = prompt("Do you choose rock, paper or scissors?");
 	computerChoice = "scissors";
 }
     compare(userChoice, computerChoice);
-
 
 }
