@@ -79,7 +79,7 @@ win();
 else if (choice1 === "scissors") {
 
 if (choice2 === "rock") {
-    output.innerHTML = "The computer was rock, so you lose".;
+    output.innerHTML = "The computer was rock, so you lose.";
 lose();
 }
     else {
